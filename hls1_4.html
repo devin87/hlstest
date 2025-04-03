@@ -1,0 +1,24 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Live</title>
+    <style type="text/css">
+        #player {width:640px;height:360px;}
+    </style>
+</head>
+<body>
+    <div id="view">
+        <video id="player" controls autoplay></video>
+    </div>
+    <script type="text/javascript" src="js/hls.1.4.14.js"></script>
+    <script type="text/javascript">
+        var video = document.getElementById('player');
+        var hls = new Hls();
+        hls.loadSource('http://127.0.0.1:820/test/live/cctv13.m3u8');
+        hls.attachMedia(video);
+    </script>
+</body>
+</html>
